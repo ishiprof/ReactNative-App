@@ -3,8 +3,7 @@ import {
   NotoSansJP_400Regular,
   NotoSansJP_700Bold,
 } from "@expo-google-fonts/noto-sans-jp";
-import { NavigationContainer } from "@react-navigation/native";
-import { SplashScreen, Stack } from "expo-router";
+import { SplashScreen, Stack, Tabs } from "expo-router";
 import { useEffect } from "react";
 
 SplashScreen.preventAutoHideAsync();
@@ -26,9 +25,10 @@ export default function RootLayout() {
   }
 
   return (
-    <Stack>
-      <Stack.Screen name="index" options={{ headerShown: false }} />
-      <NavigationContainer>{/* Rest of your app code */}</NavigationContainer>
-    </Stack>
+    // <Stack>
+    //   <Stack.Screen name="index" options={{ headerShown: false }} />
+    //   <Stack.Screen name="about" options={{ headerShown: false }} />
+    // </Stack>
+    <Tabs />
   );
 }
