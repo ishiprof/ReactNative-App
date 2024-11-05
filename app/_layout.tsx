@@ -4,6 +4,7 @@ import {
   NotoSansJP_700Bold,
 } from "@expo-google-fonts/noto-sans-jp";
 import { SplashScreen, Stack, Tabs } from "expo-router";
+import { Icon } from "react-native-elements";
 import { useEffect } from "react";
 
 SplashScreen.preventAutoHideAsync();
@@ -25,10 +26,27 @@ export default function RootLayout() {
   }
 
   return (
-    // <Stack>
-    //   <Stack.Screen name="index" options={{ headerShown: false }} />
-    //   <Stack.Screen name="about" options={{ headerShown: false }} />
-    // </Stack>
-    <Tabs />
+    <>
+      <Tabs>
+        <Tabs.Screen
+          name="index"
+          options={{
+            headerShown: false,
+            tabBarIcon: ({ color, size }) => (
+              <Icon name="home" color={color} size={size} />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="about"
+          options={{
+            headerShown: false,
+            tabBarIcon: ({ color, size }) => (
+              <Icon name="face" color={color} size={size} />
+            ),
+          }}
+        />
+      </Tabs>
+    </>
   );
 }
